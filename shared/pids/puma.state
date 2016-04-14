@@ -1,0 +1,30 @@
+---
+pid: 1705
+config: !ruby/object:Puma::Configuration
+  cli_options: 
+  conf: 
+  options:
+    :min_threads: 1
+    :max_threads: 6
+    :quiet: false
+    :debug: false
+    :binds:
+    - unix:///home/deploy/serious_tesla/shared/sockets/puma.sock
+    :workers: 1
+    :daemon: false
+    :mode: :http
+    :before_fork: []
+    :worker_timeout: 60
+    :worker_shutdown_timeout: 30
+    :environment: production
+    :redirect_stdout: "/home/deploy/serious_tesla/shared/log/puma.stdout.log"
+    :redirect_stderr: "/home/deploy/serious_tesla/shared/log/puma.stderr.log"
+    :redirect_append: true
+    :pidfile: "/home/deploy/serious_tesla/shared/pids/puma.pid"
+    :state: "/home/deploy/serious_tesla/shared/pids/puma.state"
+    :control_url: unix:///tmp/puma-status-1450076246413-1705
+    :worker_directory: "/home/deploy/serious_tesla"
+    :config_file: config/puma.rb
+    :control_url_temp: "/tmp/puma-status-1450076246413-1705"
+    :control_auth_token: 3bd5233cfba6b8506e77652155f95588
+    :tag: serious_tesla
